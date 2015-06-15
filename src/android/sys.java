@@ -1,4 +1,4 @@
-package com.webcraft.doml;
+package com.webcraft.sys;
 
 import java.io.File;
 
@@ -16,7 +16,7 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 
 
-public class doml extends CordovaPlugin { 
+public class sys extends CordovaPlugin { 
 	
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {      
