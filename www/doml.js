@@ -3,7 +3,7 @@ module.exports = {
     getDMD:function(args) {
         cordova.exec(
             (!args.success) ? null : args.success, 
-            function(error){alert('DOMLauncher API getDMD Error:'+error)}, 
+            function(error){alert('API getDMD Error:'+error)}, 
             "doml", 
             'getDMD',
             []
@@ -13,7 +13,7 @@ module.exports = {
     setDMD:function(args) {
         cordova.exec(
             (!args.success) ? null : args.success, 
-            function(error){alert('DOMLauncher API setDMD Error:'+error)}, 
+            function(error){alert('API setDMD Error:'+error)}, 
             "doml", 
             'setDMD',
             [{name:args.name}]
