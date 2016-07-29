@@ -22,7 +22,7 @@ public class sys extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {      
         if(action.equals("getDMD")){
             File sdcard = Environment.getExternalStorageDirectory();
-            File f = new File(sdcard,"/DOMLauncher");
+            File f = new File(sdcard,"/appLauncher");
             File[] files = f.listFiles();
             JSONArray jArray = new JSONArray();
 
@@ -48,13 +48,13 @@ public class sys extends CordovaPlugin {
             File sdcard = Environment.getExternalStorageDirectory();     
             SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this.cordova.getActivity());
             String dmdName = args.getJSONObject(0).getString("name");
-            File dmd = new File(sdcard+"/DOMLauncher/"+dmdName+"/index.html");
+            File dmd = new File(sdcard+"/appLauncher/"+dmdName+"/index.html");
             
             if(dmd.exists()){    
                 Editor editor = sharedPrefs.edit();
                 editor.putString("active", dmdName);
                 if (editor.commit()){
-                    this.webView.sendJavascript("window.location = 'file://"+sdcard+"/DOMLauncher/"+dmdName+"/index.html'");   
+                    this.webView.sendJavascript("window.location = 'file://"+sdcard+"/appLauncher/"+dmdName+"/index.html'");   
                 }else{
                     callbackContext.success(new JSONObject().put("returnVal", false));	
                 }             	
